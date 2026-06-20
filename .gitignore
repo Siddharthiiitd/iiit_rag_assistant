@@ -1,0 +1,4 @@
+echo "backend/docs/" > .gitignore
+echo "backend/chroma_db/" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo ".env" >> .gitignore
