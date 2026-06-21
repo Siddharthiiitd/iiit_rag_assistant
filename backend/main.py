@@ -19,6 +19,25 @@ class QueryRequest(BaseModel):
 def root():
     return {"status": "IIIT Delhi assistant is running"}
 
+@app.get("/sources")
+def get_sources():
+    from langchain_chroma import Chroma
+    from langchain_google_genai import GoogleGenerativeAIEmbeddings
+    from config import GEMINI_API_KEY, CHROMA_DB_PATH, COLLECTION_NAME
+    
+    embeddings = GoogleGenerativeAIEmbeddings(
+        model="gemini-embedding-001",
+        google_api_key=GEMINI_API_KEY
+    )
+    db = Chroma(
+        collection_name=COLLECTION_NAME,
+        embedding_function=embeddings,
+        persist_directory=CHROMA_DB_PATH
+    )
+    results = db._collection.get()
+    sources = list(set([m["source"] for m in results["metadatas"]]))
+    return {"sources": sorted(sources)}
+
 @app.post("/query")
 async def query(request: QueryRequest):
     if not request.question.strip():
