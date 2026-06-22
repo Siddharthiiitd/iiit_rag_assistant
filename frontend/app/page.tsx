@@ -1,5 +1,7 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 "use client";
 import { useState, useRef, useEffect, useSyncExternalStore } from "react";
+
 
 type Message = {
   role: "user" | "assistant";
@@ -149,7 +151,7 @@ export default function Home() {
   const [sources, setSources] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/sources")
+    fetch(`${API_URL}/sources`)
       .then((r) => r.json())
       .then((data) => setSources(Array.isArray(data.sources) ? data.sources : []))
       .catch(() => setSources([]));
@@ -175,7 +177,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/query", {
+      const res = await fetch(`${API_URL}/query`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question }),

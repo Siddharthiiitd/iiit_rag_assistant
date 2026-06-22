@@ -32,15 +32,18 @@ Answer:
 
 def check_relevance(question: str, chunks: list) -> bool:
     llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
-    google_api_key=GEMINI_API_KEY,
-    temperature=0
+        model="gemini-2.5-flash",
+        google_api_key=GEMINI_API_KEY,
+        temperature=0
     )
     
     context = "\n\n".join([c.page_content for c in chunks])
     
-    prompt = f"""You are a relevance grader. 
-Given the following retrieved document chunks and a question, determine if the chunks contain enough information to answer the question.
+    prompt = f"""You are a relevance grader for a college document assistant.
+Given retrieved document chunks and a question, determine if the chunks contain ANY information that could help answer the question, even partially.
+
+Be LENIENT — if the chunks contain related information about the topic, mark as RELEVANT.
+Only mark IRRELEVANT if the chunks are completely unrelated to the question topic.
 
 Chunks:
 {context}
@@ -86,7 +89,7 @@ def query_rag(question: str):
 
     # Step 3: send to Gemini
     llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     google_api_key=GEMINI_API_KEY,
     temperature=0.2
     )
