@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://fluffy-horse-bc36e6.netlify.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
