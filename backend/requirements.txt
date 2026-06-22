@@ -8,7 +8,6 @@ langchain-community
 langchain-text-splitters
 langchain-chroma
 chromadb==0.5.0
-sentence-transformers==3.0.0
 python-dotenv==1.0.0
 pydantic==2.13.4
 pydantic_core==2.46.4
@@ -48,7 +47,7 @@ typing_extensions==4.15.0
 tzdata==2025.3
 urllib3==2.7.0
 uuid_utils==0.16.0
-websockets==16.0
+websockets
 xxhash==3.7.0
 zstandard==0.25.0
 zstandard==0.25.0
