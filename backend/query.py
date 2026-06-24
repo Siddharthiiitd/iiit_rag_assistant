@@ -32,7 +32,7 @@ Answer:
 
 def check_relevance(question: str, chunks: list) -> bool:
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-2.0-flash",
         google_api_key=GEMINI_API_KEY,
         temperature=0
     )
@@ -105,7 +105,7 @@ def query_rag(question: str):
 
     # Step 3: send to Gemini
     llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-2.0-flash",
     google_api_key=GEMINI_API_KEY,
     temperature=0.2
     )
@@ -121,6 +121,7 @@ def query_rag(question: str):
             response = chain.invoke({"context": context, "question": question})
             break
         except Exception as e:
+            
             if ("429" in str(e) or "503" in str(e)) and attempt < 2:
                 print(f"Rate limited or server busy, waiting 30s...")
                 time.sleep(30)
