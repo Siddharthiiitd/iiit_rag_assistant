@@ -52,10 +52,26 @@ Question: {question}
 
 Reply with only one word: RELEVANT or IRRELEVANT"""
 
-    response = llm.invoke(prompt)
+    response = None
+    for attempt in range(3):
+        try:
+            response = llm.invoke(prompt)
+            break
+        except Exception as e:
+            if ("429" in str(e) or "503" in str(e)) and attempt < 2:
+                print(f"Rate limited or server busy, waiting 30s...")
+                time.sleep(30)
+            else:
+                raise e
+
+    if response is None:
+        print("Relevance check failed after retries, defaulting to RELEVANT")
+        return True
+
     result = response.content.strip().upper()
     print(f"Relevance check: {result}")
     return result == "RELEVANT"
+
 
 def query_rag(question: str):
     # Step 1: retrieve relevant chunks
@@ -105,8 +121,8 @@ def query_rag(question: str):
             response = chain.invoke({"context": context, "question": question})
             break
         except Exception as e:
-            if "429" in str(e) and attempt < 2:
-                print(f"Rate limited, waiting 30s...")
+            if ("429" in str(e) or "503" in str(e)) and attempt < 2:
+                print(f"Rate limited or server busy, waiting 30s...")
                 time.sleep(30)
             else:
                 raise e
