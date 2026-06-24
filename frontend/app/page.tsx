@@ -23,7 +23,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" />
       </svg>
     ),
     label: "PDF Parsing", desc: "PyMuPDF extracts text from each page of the document",
@@ -31,7 +31,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
       </svg>
     ),
     label: "Chunking", desc: "500-token overlapping chunks via LangChain",
@@ -39,7 +39,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
     ),
     label: "Embedding", desc: "Gemini Embedding 001 converts chunks to vectors",
@@ -47,7 +47,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        <ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
       </svg>
     ),
     label: "ChromaDB", desc: "Vectors stored with source and page metadata",
@@ -55,7 +55,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     ),
     label: "Semantic Search", desc: "Query matched via cosine similarity",
@@ -63,7 +63,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+        <path d="M9 12l2 2 4-4" /><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
       </svg>
     ),
     label: "CRAG Check", desc: "Relevance scored — irrelevant = graceful fallback",
@@ -71,7 +71,7 @@ const PROCESS_STEPS = [
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
     label: "Gemini 2.0 Flash", desc: "Generates grounded answer from retrieved context",
@@ -101,10 +101,10 @@ function SourcesTab({ sources }: { sources: string[] }) {
           {visible.map((src, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 10px", borderRadius: 10, marginBottom: 6, background: "rgba(0,219,233,0.04)", border: "1px solid rgba(0,219,233,0.1)" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00dbe9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="9" y1="13" x2="15" y2="13"/>
-                <line x1="9" y1="17" x2="13" y2="17"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="9" y1="13" x2="15" y2="13" />
+                <line x1="9" y1="17" x2="13" y2="17" />
               </svg>
               <span style={{ fontSize: 11, color: "#b9cacb", lineHeight: 1.4, wordBreak: "break-word" }}>{src}</span>
             </div>
@@ -114,12 +114,12 @@ function SourcesTab({ sources }: { sources: string[] }) {
               style={{ width: "100%", padding: "8px", borderRadius: 10, marginTop: 2, background: "transparent", border: "1px dashed rgba(0,219,233,0.2)", color: "#00dbe9", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
               {expanded ? (
                 <>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="18 15 12 9 6 15" /></svg>
                   Show less
                 </>
               ) : (
                 <>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="6 9 12 15 18 9" /></svg>
                   Show {sources.length - 3} more
                 </>
               )}
@@ -136,7 +136,7 @@ function SourcesTab({ sources }: { sources: string[] }) {
 
 export default function Home() {
   const mounted = useSyncExternalStore(
-    () => () => {},
+    () => () => { },
     () => true,
     () => false
   );
@@ -161,7 +161,9 @@ export default function Home() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"sources" | "process" | "contact">("sources");
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    typeof window !== "undefined" ? window.innerWidth > 768 : false
+  );
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -230,10 +232,36 @@ export default function Home() {
         <div style={{ position: "absolute", width: 250, height: 250, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,219,233,0.06) 0%, transparent 70%)", top: "45%", left: "45%", transform: "translate(-50%,-50%)" }} />
       </div>
 
+      {/* Sidebar overlay backdrop for mobile */}
+      {sidebarOpen && (
+        <div
+          onClick={() => setSidebarOpen(false)}
+          style={{
+            position: "fixed", inset: 0, zIndex: 19,
+            background: "rgba(0,0,0,0.5)",
+            backdropFilter: "blur(2px)",
+            display: typeof window !== "undefined" && window.innerWidth <= 768 ? "block" : "none",
+          }}
+        />
+      )}
+
       {/* ── SIDEBAR ── */}
       {sidebarOpen && (
-        <aside style={{ width: 240, flexShrink: 0, display: "flex", flexDirection: "column", background: "rgba(10,24,40,0.85)", backdropFilter: "blur(16px)", borderRight: "1px solid rgba(0,219,233,0.1)", zIndex: 20, position: "relative" }}>
-
+        <aside style={{
+          width: 240,
+          flexShrink: 0,
+          display: "flex",
+          flexDirection: "column",
+          background: "rgba(10,24,40,0.95)",
+          backdropFilter: "blur(16px)",
+          borderRight: "1px solid rgba(0,219,233,0.1)",
+          zIndex: 20,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          height: "100vh",
+          overflowY: "auto",
+        }}>
           {/* Sidebar header */}
           <div style={{ padding: "16px 14px 10px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -252,17 +280,17 @@ export default function Home() {
                 style={{ flex: 1, padding: "10px 4px", border: "none", background: "transparent", cursor: "pointer", color: activeTab === tab ? "#00dbe9" : "#849495", borderBottom: activeTab === tab ? "2px solid #00dbe9" : "2px solid transparent", transition: "all 0.2s", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {tab === "sources" && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                   </svg>
                 )}
                 {tab === "process" && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/>
+                    <circle cx="12" cy="12" r="3" /><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41" />
                   </svg>
                 )}
                 {tab === "contact" && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
                   </svg>
                 )}
               </button>
@@ -271,7 +299,6 @@ export default function Home() {
 
           {/* Tab content */}
           <div style={{ flex: 1, overflowY: "auto", padding: "12px 10px", scrollbarWidth: "none" }}>
-
             {activeTab === "sources" && <SourcesTab sources={sources} />}
 
             {activeTab === "process" && (
@@ -306,15 +333,15 @@ export default function Home() {
                 <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
                   {[
                     {
-                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>,
+                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>,
                       label: "GitHub", value: "github.com/Siddharthiiitd"
                     },
                     {
-                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>,
                       label: "Email", value: "siddharth24554@iiitd.ac.in"
                     },
                     {
-                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
+                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#849495" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /></svg>,
                       label: "Project", value: "iiitd-rag-assistant"
                     },
                   ].map((item, i) => (
@@ -333,14 +360,23 @@ export default function Home() {
           {/* Collapse button */}
           <button onClick={() => setSidebarOpen(false)}
             style={{ padding: "10px", fontSize: 11, color: "#3b494b", background: "transparent", border: "none", borderTop: "1px solid rgba(255,255,255,0.05)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
             collapse
           </button>
         </aside>
       )}
 
       {/* ── MAIN CHAT ── */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", position: "relative", zIndex: 10, minWidth: 0 }}>
+      <div style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
+        zIndex: 10,
+        minWidth: 0,
+        marginLeft: sidebarOpen && typeof window !== "undefined" && window.innerWidth > 768 ? 240 : 0,
+        transition: "margin-left 0.2s ease",
+      }}>
 
         {/* Header */}
         <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(5,20,36,0.75)", backdropFilter: "blur(12px)" }}>
@@ -348,7 +384,7 @@ export default function Home() {
             {!sidebarOpen && (
               <button onClick={() => setSidebarOpen(true)}
                 style={{ background: "transparent", border: "none", color: "#849495", cursor: "pointer", marginRight: 4, display: "flex", alignItems: "center" }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
               </button>
             )}
             <img src="/iiitd.png" alt="IIIT Delhi" style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", boxShadow: "0 0 14px rgba(0,219,233,0.3)", border: "1.5px solid rgba(0,219,233,0.25)" }} />
@@ -401,7 +437,7 @@ export default function Home() {
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                           {[...new Map(msg.sources.map((s) => [`${s.source}-${s.page}`, s])).values()].map((s, j) => (
                             <span key={j} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 20, background: "rgba(0,219,233,0.08)", border: "1px solid rgba(0,219,233,0.2)", color: "#00dbe9", display: "flex", alignItems: "center", gap: 4 }}>
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
                               {s.source} — p.{s.page}
                             </span>
                           ))}
@@ -470,8 +506,8 @@ export default function Home() {
                   transition: "all 0.25s ease", flexShrink: 0,
                 }}>
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"/>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
               </button>
             </div>
