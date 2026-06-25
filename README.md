@@ -2,8 +2,8 @@
 
 A conversational AI assistant for IIIT Delhi students built with Retrieval-Augmented Generation (RAG) and Corrective RAG (CRAG). Ask natural language questions about college regulations, academic policies, and BTech requirements — get cited answers instantly.
 
-## Live Demo
-> Coming soon
+## Live Demo URL
+> https://fluffy-horse-bc36e6.netlify.app/
 
 ## What it does
 
