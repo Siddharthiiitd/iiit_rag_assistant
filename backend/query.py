@@ -75,6 +75,7 @@ Reply with only one word: RELEVANT or IRRELEVANT"""
 
 def query_rag(question: str):
     # Step 1: retrieve relevant chunks
+    print(f"QUERY: {question}")
     vectorstore = get_vectorstore()
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
     chunks = retriever.invoke(question)
